@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hoşgeldin!</title>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+
+
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Sayı Kombinasyonu</div>
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="txtAd" class="col-md-4 col-form-label text-md-right">Karakter Giriniz</label>
+                            <div class="col-md-6">
+                                <input type="text" id="txtAd" class="form-control" id="txtAd" maxlength="9" required autofocus>
+                            </div>
+                        </div>
+                        <div class="col-md-6 offset-md-4">
+                            <button type="submit" id="gir" class="btn btn-primary">
+                                Hesapla
+                            </button>
+                        </div>
+
+                    </div>
+                    <label id="lbltipAddedComment1" class="col-md-6 offset-md-4"></label>
+                    <label id="lbltipAddedComment2" class="col-md-6 offset-md-4"></label>
+                    <label id="lbltipAddedComment3" class="col-md-6 offset-md-4"></label>
+                    <label id="lbltipAddedComment4" class="col-md-6 offset-md-4"></label>
+                    <label id="lbltipAddedComment5" class="col-md-6 offset-md-4"></label>
+                    <label id="lbltipAddedComment6" class="col-md-6 offset-md-4"></label>
+                    <label id="lbltipAddedComment7" class="col-md-6 offset-md-4"></label>
+                    <label id="lbltipAddedComment8" class="col-md-6 offset-md-4"></label>
+                    <label id="lbltipAddedComment9" class="col-md-6 offset-md-4"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/JavaScript">
+        var ad = document.getElementById("txtAd");
+        var btn = document.getElementById("gir")
+
+        btn.onclick = function () {
+            if (ad.value.search(/[A-Z]/) == 0 || ad.value.search(/[0-9]/) == 0)
+                alert("Lütfen sadece küçük karakterli harf giriniz");
+
+
+
+            else {
+                var veri = ad.value;
+                var dizi1 = veri.split("");
+
+
+                for (var i = 1; i <= ad.value.length; i++) {
+                    random1 = Math.floor(Math.random() * ad.value.length);
+                    random2 = Math.floor(Math.random() * ad.value.length);
+                    random3 = Math.floor(Math.random() * ad.value.length);
+                    random4 = Math.floor(Math.random() * ad.value.length);
+                    random5 = Math.floor(Math.random() * ad.value.length);
+                    random6 = Math.floor(Math.random() * ad.value.length);
+                    random7 = Math.floor(Math.random() * ad.value.length);
+                    random8 = Math.floor(Math.random() * ad.value.length);
+                    random9 = Math.floor(Math.random() * ad.value.length);
+
+
+                    if (i == 1) { document.getElementById('lbltipAddedComment1').innerHTML = i + " karakterli: " + dizi1[random1]; }
+                    else if (i == 2) { document.getElementById('lbltipAddedComment2').innerHTML = i + " karakterli: " + dizi1[random2] + dizi1[random9]; }
+                    else if (i == 3) { document.getElementById('lbltipAddedComment3').innerHTML = i + " karakterli: " + dizi1[random3] + dizi1[random8] + dizi1[random6]; }
+                    else if (i == 4) { document.getElementById('lbltipAddedComment4').innerHTML = i + " karakterli: " + dizi1[random4] + dizi1[random7] + dizi1[random2] + dizi1[random2]; }
+                    else if (i == 5) { document.getElementById('lbltipAddedComment5').innerHTML = i + " karakterli: " + dizi1[random6] + dizi1[random6] + dizi1[random4] + dizi1[random2] + dizi1[random1]; }
+                    else if (i == 6) { document.getElementById('lbltipAddedComment6').innerHTML = i + " karakterli: " + dizi1[random6] + dizi1[random5] + dizi1[random3] + dizi1[random4] + dizi1[random8] + dizi1[random9]; }
+                    else if (i == 7) { document.getElementById('lbltipAddedComment7').innerHTML = i + " karakterli: " + dizi1[random7] + dizi1[random4] + dizi1[random8] + dizi1[random8] + dizi1[random2] + dizi1[random1] + dizi1[random3]; }
+                    else if (i == 8) { document.getElementById('lbltipAddedComment8').innerHTML = i + " karakterli: " + dizi1[random8] + dizi1[random3] + dizi1[random7] + dizi1[random6] + dizi1[random4] + dizi1[random2] + dizi1[random5] + dizi1[random5]; }
+                    else if (i == 9) { document.getElementById('lbltipAddedComment9').innerHTML = i + " karakterli: " + dizi1[random9] + dizi1[random1] + dizi1[random1] + dizi1[random7] + dizi1[random5] + dizi1[random2] + dizi1[random2] + dizi1[random3] + dizi1[random8]; }
+
+                }
+                setTimeout(function () { document.write('işlem yaptığınız için teşekkürler, bu yazı JS document.write() fonksiyonu ile yazıldı'); }, 3000);
+            }
+
+        }
+
+
+    </script>
+</body>
+</html> 
